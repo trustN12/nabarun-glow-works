@@ -5,10 +5,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:nabarun.biswas@example.com', label: 'Email' }
+    { icon: Github, href: 'https://github.com/trustN12', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/nabarun-biswas-102bb118a', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:academyshreyn12@gmail.com', label: 'Email' }
   ];
 
   return (
@@ -41,24 +40,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-primary">Quick Links</h4>
-            <div className="space-y-2">
-              {['About', 'Projects', 'Skills', 'Contact'].map((link) => (
-                <button
-                  key={link}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => {
-                    const element = document.getElementById(link.toLowerCase());
-                    element?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  {link}
-                </button>
-              ))}
-            </div>
-          </div>
+
 
           {/* Technologies */}
           <div className="space-y-4">
@@ -67,8 +49,8 @@ const Footer = () => {
               <p>React & Next.js</p>
               <p>TypeScript & JavaScript</p>
               <p>SAP ABAP & HANA</p>
-              <p>Node.js & Python</p>
-              <p>PostgreSQL & MongoDB</p>
+              <p>Node.js & Express.js</p>
+              <p>PostgreSQL, SQL & NoSQL</p>
             </div>
           </div>
         </div>
@@ -77,10 +59,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-primary/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Nabarun Biswas. All rights reserved.
-            </p>
-            <p className="text-muted-foreground text-sm flex items-center">
-              Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> using React & Tailwind CSS
+              © {currentYear} Nabarun Biswas
             </p>
           </div>
         </div>

@@ -12,12 +12,12 @@ const About = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   const skills = [
-    { category: 'Frontend', icon: Globe, items: ['React', 'TypeScript', 'Next.js', 'Vue.js', 'Tailwind CSS'] },
-    { category: 'Backend', icon: Server, items: ['Node.js', 'Python', 'Express', 'Django', 'FastAPI'] },
-    { category: 'Database', icon: Database, items: ['PostgreSQL', 'MongoDB', 'Redis', 'SAP HANA', 'MySQL'] },
-    { category: 'SAP Technologies', icon: Zap, items: ['SAP ABAP', 'SAP HANA', 'SAP Fiori', 'SAP UI5', 'SAP Gateway'] },
-    { category: 'DevOps & Tools', icon: Code, items: ['Docker', 'AWS', 'Git', 'Jenkins', 'Kubernetes'] },
-    { category: 'AI & Analytics', icon: Brain, items: ['Machine Learning', 'Data Analysis', 'SAP Analytics Cloud', 'Power BI'] }
+    { category: 'Frontend', icon: Globe, items: ['React', 'TypeScript', 'Next.js','Shadcn UI', 'Redux', 'Gsap', 'Framer', 'Tailwind CSS'] },
+    { category: 'Backend', icon: Server, items: ['Node.js', 'Express.js', 'Authentications', 'REST APIs', 'JWT', 'Firebase'] },
+    { category: 'Database', icon: Database, items: ['PostgreSQL', 'MongoDB', 'Convex', 'SAP HANA',  'SQL'] },
+    { category: 'SAP Technologies', icon: Zap, items: ['SAP ABAP', 'SAP HANA', 'SAP Fiori'] },
+    { category: 'DevOps & Tools', icon: Code, items: ['Firebase', 'Netlify', 'Clerk', 'Razorpay', 'AWS', 'Git', 'Drizzle'] },
+    { category: 'AI/ML', icon: Brain, items: ['Open-Router APIs', 'VAPI AI', 'SAP Analytics Cloud', '11Labs', 'GenAI(IBM Certifications - Ongoing)'] }
   ];
 
   useEffect(() => {
