@@ -12,7 +12,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-card/30 backdrop-blur-sm border-t border-primary/20">
+    <footer className="glass-card border-t border-primary/30 shadow-glow-dreamy">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}

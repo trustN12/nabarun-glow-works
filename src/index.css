@@ -2,63 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Portfolio Design System - Neon/Cyberpunk Theme
+/* Premium Portfolio Design System - Dreamy Aurora Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Dark Theme Base */
-    --background: 220 13% 9%;
-    --foreground: 210 40% 98%;
+    /* Dreamy Dark Base */
+    --background: 240 15% 6%;
+    --foreground: 320 25% 96%;
 
-    /* Card System */
-    --card: 220 13% 12%;
-    --card-foreground: 210 40% 98%;
+    /* Card System with Glass Effect */
+    --card: 260 20% 8%;
+    --card-foreground: 320 25% 96%;
 
     /* Interactive Elements */
-    --popover: 220 13% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 260 20% 8%;
+    --popover-foreground: 320 25% 96%;
 
-    /* Brand Colors - Neon Cyan Primary */
-    --primary: 180 100% 50%;
-    --primary-foreground: 220 13% 9%;
-    --primary-glow: 180 100% 70%;
+    /* Primary - Dreamy Rose Gold */
+    --primary: 340 85% 75%;
+    --primary-foreground: 240 15% 6%;
+    --primary-glow: 340 90% 85%;
 
-    /* Secondary - Electric Purple */
-    --secondary: 280 100% 70%;
-    --secondary-foreground: 220 13% 9%;
-    --secondary-glow: 280 100% 85%;
+    /* Secondary - Ethereal Lavender */
+    --secondary: 280 85% 80%;
+    --secondary-foreground: 240 15% 6%;
+    --secondary-glow: 280 90% 88%;
 
-    /* Accent - Neon Blue */
-    --accent: 210 100% 60%;
-    --accent-foreground: 220 13% 9%;
-    --accent-glow: 210 100% 80%;
+    /* Accent - Mystical Teal */
+    --accent: 190 85% 75%;
+    --accent-foreground: 240 15% 6%;
+    --accent-glow: 190 90% 85%;
 
     /* Muted Elements */
-    --muted: 220 13% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 250 15% 12%;
+    --muted-foreground: 280 15% 70%;
 
     /* Destructive */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 320 25% 96%;
 
     /* Borders and Inputs */
-    --border: 220 13% 20%;
-    --input: 220 13% 15%;
-    --ring: 180 100% 50%;
+    --border: 260 20% 18%;
+    --input: 250 15% 12%;
+    --ring: 340 85% 75%;
 
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(280 100% 70%));
-    --gradient-secondary: linear-gradient(135deg, hsl(280 100% 70%), hsl(210 100% 60%));
-    --gradient-accent: linear-gradient(45deg, hsl(180 100% 50%), hsl(210 100% 60%));
-    --gradient-dark: linear-gradient(135deg, hsl(220 13% 9%), hsl(220 13% 12%));
+    /* Dreamy Aurora Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(340 85% 75%), hsl(280 85% 80%), hsl(190 85% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 85% 80%), hsl(240 90% 85%), hsl(340 85% 75%));
+    --gradient-accent: linear-gradient(45deg, hsl(190 85% 75%), hsl(220 90% 80%), hsl(280 85% 80%));
+    --gradient-dark: linear-gradient(135deg, hsl(240 15% 6%), hsl(260 20% 8%), hsl(250 15% 10%));
+    --gradient-aurora: linear-gradient(135deg, hsl(340 85% 75% / 0.3), hsl(280 85% 80% / 0.2), hsl(190 85% 75% / 0.3));
 
-    /* Neon Glow Effects */
-    --glow-primary: 0 0 30px hsl(180 100% 50% / 0.5);
-    --glow-secondary: 0 0 30px hsl(280 100% 70% / 0.5);
-    --glow-accent: 0 0 30px hsl(210 100% 60% / 0.5);
-    --glow-text: 0 0 10px hsl(180 100% 50% / 0.3);
+    /* Ethereal Glow Effects */
+    --glow-primary: 0 0 40px hsl(340 85% 75% / 0.6);
+    --glow-secondary: 0 0 40px hsl(280 85% 80% / 0.6);
+    --glow-accent: 0 0 40px hsl(190 85% 75% / 0.6);
+    --glow-text: 0 0 15px hsl(340 85% 75% / 0.4);
+    --glow-dreamy: 0 0 60px hsl(340 85% 75% / 0.3), 0 0 100px hsl(280 85% 80% / 0.2);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -118,17 +120,24 @@ All colors MUST be HSL.
     background: hsl(var(--primary-glow));
   }
 
-  /* Neon Text Effect */
+  /* Dreamy Text Effect */
   .neon-text {
     color: hsl(var(--primary));
     text-shadow: var(--glow-text);
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  /* Glowing Button Base */
+  /* Premium Glowing Button */
   .glow-button {
     position: relative;
     overflow: hidden;
     transition: var(--transition-smooth);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--primary) / 0.3);
   }
 
   .glow-button::before {
@@ -138,8 +147,8 @@ All colors MUST be HSL.
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
-    transition: left 0.5s;
+    background: var(--gradient-aurora);
+    transition: left 0.6s ease-out;
   }
 
   .glow-button:hover::before {
@@ -147,39 +156,93 @@ All colors MUST be HSL.
   }
 
   .glow-button:hover {
-    box-shadow: var(--glow-primary);
-    transform: translateY(-2px);
+    box-shadow: var(--glow-dreamy);
+    transform: translateY(-3px) scale(1.02);
+    border-color: hsl(var(--primary) / 0.8);
   }
 
-  /* Floating Animation */
+  /* Glass Morphism Effect */
+  .glass-card {
+    background: hsl(var(--card) / 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px hsl(var(--primary) / 0.1);
+  }
+
+  /* Dreamy Floating Animation */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(1deg); }
+    66% { transform: translateY(-8px) rotate(-1deg); }
   }
 
   .float {
-    animation: float 3s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
   }
 
-  /* Pulse Glow Animation */
-  @keyframes pulse-glow {
+  /* Aurora Pulse Animation */
+  @keyframes aurora-pulse {
     0%, 100% { 
-      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+      box-shadow: var(--glow-primary);
     }
-    50% { 
-      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    33% { 
+      box-shadow: var(--glow-secondary);
+    }
+    66% { 
+      box-shadow: var(--glow-accent);
     }
   }
 
   .pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+    animation: aurora-pulse 3s ease-in-out infinite;
   }
 
-  /* Grid Background Effect */
+  /* Dreamy Grid Background */
   .grid-bg {
     background-image: 
-      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
+      radial-gradient(circle at 25% 25%, hsl(340 85% 75% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(280 85% 80% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, hsl(190 85% 75% / 0.03) 0%, transparent 50%);
+    background-size: 100px 100px, 150px 150px, 200px 200px;
+    background-position: 0 0, 50px 50px, 100px 100px;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  /* Aurora Background Animation */
+  @keyframes aurora {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .aurora-bg {
+    background: var(--gradient-aurora);
+    background-size: 400% 400%;
+    animation: aurora 8s ease-in-out infinite;
   }
 }

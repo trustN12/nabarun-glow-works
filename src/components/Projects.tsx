@@ -124,25 +124,25 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.id}
-              className={`group overflow-hidden bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-500 hover:shadow-glow-primary ${
+              className={`group overflow-hidden glass-card hover:border-primary/60 transition-all duration-500 hover:scale-105 hover:shadow-glow-dreamy shimmer ${
                 project.featured ? 'lg:col-span-2 xl:col-span-1' : ''
               }`}
             >
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden rounded-t-2xl">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button size="sm" variant="secondary" className="bg-primary/20 hover:bg-primary text-primary-foreground">
+                <div className="absolute inset-0 bg-gradient-aurora opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute bottom-6 right-6 flex space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <Button size="sm" className="glow-button bg-gradient-primary text-primary-foreground shadow-glow-primary">
                     <Eye className="h-4 w-4" />
                   </Button>
-                  <Button size="sm" variant="secondary" className="bg-secondary/20 hover:bg-secondary text-secondary-foreground">
+                  <Button size="sm" className="glass-card border-secondary/50 text-secondary hover:bg-secondary/20 glow-button">
                     <Github className="h-4 w-4" />
                   </Button>
-                  <Button size="sm" variant="secondary" className="bg-accent/20 hover:bg-accent text-accent-foreground">
+                  <Button size="sm" className="glass-card border-accent/50 text-accent hover:bg-accent/20 glow-button">
                     <ExternalLink className="h-4 w-4" />
                   </Button>
                 </div>
@@ -172,14 +172,14 @@ const Projects = () => {
                   <Button 
                     variant="default" 
                     size="sm" 
-                    className="bg-gradient-primary hover:bg-gradient-primary text-primary-foreground flex-1"
+                    className="glow-button bg-gradient-primary hover:bg-gradient-primary text-primary-foreground flex-1 shadow-glow-primary"
                   >
                     Live Demo
                   </Button>
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground flex-1"
+                    className="glass-card border-primary/50 text-primary hover:bg-primary/20 flex-1 glow-button"
                   >
                     Code
                   </Button>

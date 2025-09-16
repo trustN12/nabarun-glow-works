@@ -50,11 +50,13 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden grid-bg">
-      {/* Animated background elements */}
+      {/* Dreamy Aurora Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl pulse-glow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/15 rounded-full blur-3xl float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent/15 rounded-full blur-3xl float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/10 rounded-full blur-2xl aurora-bg"></div>
+        <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-secondary/10 rounded-full blur-2xl aurora-bg" style={{ animationDelay: '3s' }}></div>
       </div>
 
       <div ref={heroRef} className="container mx-auto px-4 text-center relative z-10">
@@ -74,11 +76,11 @@ const Hero = () => {
           <span className="text-secondary"> SAP HANA</span> development
         </p>
 
-        <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
           <Button 
             variant="default" 
             size="lg" 
-            className="glow-button bg-gradient-primary hover:bg-gradient-primary text-primary-foreground px-8 py-4 text-lg"
+            className="glow-button bg-gradient-primary hover:bg-gradient-primary text-primary-foreground px-10 py-5 text-lg font-semibold shadow-glow-dreamy"
             onClick={scrollToProjects}
           >
             View My Work
@@ -88,7 +90,7 @@ const Hero = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 text-lg glow-button"
+            className="glass-card border-primary/50 text-primary hover:bg-primary/10 hover:text-primary px-10 py-5 text-lg font-semibold glow-button"
           >
             Download CV
             <Download className="ml-2 h-5 w-5" />

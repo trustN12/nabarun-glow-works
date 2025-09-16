@@ -82,7 +82,7 @@ const About = () => {
             return (
               <Card 
                 key={skill.category} 
-                className="p-6 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-glow-primary group"
+                className="glass-card p-8 hover:border-primary/60 transition-all duration-500 hover:shadow-glow-dreamy group hover:scale-105 shimmer"
               >
                 <div className="flex items-center mb-4">
                   <div className="p-2 rounded-lg bg-gradient-primary mr-3">

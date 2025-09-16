@@ -66,11 +66,14 @@ export default {
         'gradient-secondary': 'var(--gradient-secondary)',
         'gradient-accent': 'var(--gradient-accent)',
         'gradient-dark': 'var(--gradient-dark)',
+        'gradient-aurora': 'var(--gradient-aurora)',
       },
       boxShadow: {
         'glow-primary': 'var(--glow-primary)',
         'glow-secondary': 'var(--glow-secondary)',
         'glow-accent': 'var(--glow-accent)',
+        'glow-dreamy': 'var(--glow-dreamy)',
+        'glass': '0 8px 32px hsl(var(--primary) / 0.1)',
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

@@ -158,7 +158,7 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card ref={formRef} className="p-8 bg-card/50 backdrop-blur-sm border-primary/20">
+          <Card ref={formRef} className="glass-card p-10 shadow-glow-dreamy">
             <h3 className="text-2xl font-bold mb-6 text-primary">Send Me a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -256,7 +256,7 @@ const Contact = () => {
                 return (
                   <Card 
                     key={index} 
-                    className="p-6 bg-card/30 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-glow-primary group cursor-pointer"
+                    className="glass-card p-6 hover:border-primary/60 transition-all duration-500 hover:shadow-glow-dreamy group cursor-pointer hover:scale-105"
                   >
                     <a href={info.link} className="flex items-center space-x-4">
                       <div className="p-3 rounded-lg bg-gradient-primary">
