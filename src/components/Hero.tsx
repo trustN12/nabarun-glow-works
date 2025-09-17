@@ -1,19 +1,22 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
   const socialRef = useRef<HTMLDivElement>(null);
 
+  const [showMusicModal, setShowMusicModal] = useState(true);
+
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Hero Title: Slide in from the top with a bounce and glow
+    //GSAP ANIMATIONS
     tl.fromTo(
       titleRef.current,
       { y: -100, opacity: 0, filter: "blur(20px)" },
@@ -59,7 +62,7 @@ const Hero = () => {
         "-=0.5"
       );
 
-    // Floating Hero Background: More dramatic floating effect
+    // Floating Hero Background
     gsap.to(heroRef.current, {
       y: -30,
       duration: 4,
@@ -69,7 +72,7 @@ const Hero = () => {
       scale: 1.02,
     });
 
-    // Floating Aurora Background with different speeds
+    // Aurora animations
     gsap.to(".pulse-glow", {
       scale: 1.05,
       duration: 3,
@@ -90,6 +93,10 @@ const Hero = () => {
   }, []);
 
   const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollNext = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -101,10 +108,25 @@ const Hero = () => {
     link.click();
     document.body.removeChild(link);
   };
-  
+
+  const handlePlayMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+    setShowMusicModal(false);
+  };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden grid-bg">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden grid-bg overflow-x-hidden">
+      <audio
+        ref={audioRef}
+        src="/lofi_back.mp3"
+        loop
+        preload="auto"
+        style={{ display: "none" }}
+        muted={false}
+      />
+
       {/* Dreamy Aurora Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl pulse-glow"></div>
@@ -158,7 +180,7 @@ const Hero = () => {
           </Button>
 
           <Button
-          onClick={handleDownloadCV}
+            onClick={handleDownloadCV}
             variant="outline"
             size="lg"
             className="glass-card border-primary/50 text-primary hover:bg-primary/10 hover:text-primary px-10 py-5 text-lg font-semibold glow-button"
@@ -214,10 +236,57 @@ const Hero = () => {
       {/* Scroll indicator */}
       <div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
-        onClick={scrollToProjects}
+        onClick={scrollNext}
       >
         <ArrowDown className="h-6 w-6 text-primary cursor-pointer" />
       </div>
+
+      {/* Premium Music Modal */}
+      {showMusicModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-2xl">
+          <div
+            className="relative bg-white/10 backdrop-blur-3xl border border-white/20 
+        p-10 rounded-3xl shadow-[0_0_60px_rgba(255,255,255,0.4)] 
+        max-w-md w-full text-center animate-in fade-in zoom-in duration-700"
+          >
+            {/* Floating dreamy aura */}
+            <div className="absolute -top-24 -right-20 w-56 h-56 bg-gradient-to-tr from-pink-500/30 via-purple-500/30 to-cyan-400/30 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -bottom-28 -left-24 w-64 h-64 bg-gradient-to-bl from-yellow-400/30 via-pink-400/30 to-purple-500/30 rounded-full blur-3xl animate-pulse delay-300" />
+
+            {/* Floating glowing particles */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="w-2 h-2 bg-white/60 rounded-full blur-sm animate-bounce absolute top-10 left-1/4" />
+              <div className="w-1.5 h-1.5 bg-pink-300/80 rounded-full blur-sm animate-pulse absolute top-20 right-1/3" />
+              <div className="w-2 h-2 bg-cyan-300/70 rounded-full blur-md animate-ping absolute bottom-12 left-1/3" />
+            </div>
+
+            {/* Music description */}
+            <p className="mb-6 text-xl text-white/90 font-light drop-shadow-sm leading-relaxed">
+              ✨ Background music will be playing <br />
+              for a more immersive, dreamy experience 🎶
+            </p>
+
+            {/* Best Experience Note */}
+            <p className="mb-8 text-sm text-white/70 italic animate-pulse">
+              💻 Best enjoyed in{" "}
+              <span className="font-semibold text-cyan-300">Desktop mode</span>
+            </p>
+
+            {/* Okay Button */}
+            <Button
+              onClick={handlePlayMusic}
+              className="relative px-12 py-4 rounded-2xl font-semibold text-lg 
+          bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-400 text-white 
+          shadow-[0_0_35px_rgba(255,255,255,0.5)] hover:scale-110 
+          transition-transform duration-500 overflow-hidden group"
+            >
+              <span className="relative z-10">Okay</span>
+              {/* Magical glow effect */}
+              <span className="absolute inset-0 bg-white/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </Button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

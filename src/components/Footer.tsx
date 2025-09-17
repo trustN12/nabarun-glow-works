@@ -11,7 +11,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="glass-card border-t border-primary/30 shadow-glow-dreamy">
+    <footer className="glass-card border-t border-primary/30 shadow-glow-dreamy overflow-x-hidden">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}

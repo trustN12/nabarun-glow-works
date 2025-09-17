@@ -6,6 +6,17 @@
 All colors MUST be HSL.
 */
 
+.absolute {
+  max-width: 100vw; /* prevent overflow */
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+
 @layer base {
   :root {
     /* Dreamy Dark Base */
