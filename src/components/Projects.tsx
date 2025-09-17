@@ -6,12 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Eye } from "lucide-react";
 
-// Import project images
-import project1 from "@/assets/project1.webp";
-import project2 from "@/assets/project2.webp";
-import project3 from "@/assets/project3.webp";
-import project4 from "@/assets/project4.webp";
-import project5 from "@/assets/project5.webp";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,7 +22,7 @@ const Projects = () => {
   voice-enabled doctor avatar. Integrated real-time speech recognition, natural language processing, and
   AI-generated medical reports. Implemented subscription plans with credit-based usage tracking and
   secure online payments.`,
-      image: project1,
+      image: './project1.webp',
       technologies: [
         "NextJS",
         "Typescript",
@@ -54,7 +49,7 @@ const Projects = () => {
       title: "Frontend Guru",
       description:
         "A modern frontend learning platform with interactive video tutorials, AI assistant, and payment integration",
-      image: project2,
+      image: './project2.webp',
       technologies: [
         "React",
         "Vite",
@@ -80,7 +75,7 @@ const Projects = () => {
       title: "MyCertifolio",
       description:
         "A personal digital portfolio to showcase certificates, academic thesis, and achievements with a clean, animated UI",
-      image: project3,
+      image: './project3.webp',
       technologies: [
         "React",
         "Vite",
@@ -107,7 +102,7 @@ const Projects = () => {
       id: 4,
       title: "CodeQuest App",
       description: "A web-app with a coding quiz and live javascript editor.",
-      image: project4,
+      image: './project4.webp',
       technologies: [
         "React",
         "Tailwind CSS",
@@ -124,7 +119,7 @@ const Projects = () => {
       title: "YouTube Backend API",
       description:
         "A full-featured backend API for YouTube-like functionality, built with MERN stack. Supports authentication, video uploads, secure storage, JWT-based sessions, and cloud integration.",
-      image: project5, // you can replace this with a backend-themed placeholder
+      image: './project5.webp', // you can replace this with a backend-themed placeholder
       technologies: [
         "Node.js",
         "Express.js",
