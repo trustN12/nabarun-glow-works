@@ -14,6 +14,22 @@ const Hero = () => {
   const [showMusicModal, setShowMusicModal] = useState(true);
 
   useEffect(() => {
+    // Prevent scrolling
+    // const preventScroll = (e: Event) => e.preventDefault();
+
+    // Disable scrolling
+    // document.body.style.overflow = "hidden"; // fallback
+    // document.addEventListener("wheel", preventScroll, { passive: false });
+    // document.addEventListener("touchmove", preventScroll, { passive: false });
+    // document.addEventListener(
+    //   "keydown",
+    //   (e) => {
+    //     const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", " "];
+    //     if (keys.includes(e.key)) e.preventDefault();
+    //   },
+    //   { passive: false }
+    // );
+
     const tl = gsap.timeline();
 
     //GSAP ANIMATIONS
@@ -90,6 +106,13 @@ const Hero = () => {
       repeat: -1,
       rotation: -45,
     });
+
+    // Cleanup: remove scroll blockers
+    // return () => {
+    //   document.body.style.overflow = "auto";
+    //   document.removeEventListener("wheel", preventScroll);
+    //   document.removeEventListener("touchmove", preventScroll);
+    // };
   }, []);
 
   const scrollToProjects = () => {
@@ -97,12 +120,15 @@ const Hero = () => {
   };
 
   const scrollNext = () => {
+    // Enable scrolling
+    // document.body.style.overflow = "auto";
+
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/cv.pdf";
+    link.href = "/Nabarun_cv.pdf";
     link.download = "Nabarun_Biswas_CV.pdf";
     document.body.appendChild(link);
     link.click();
@@ -245,8 +271,8 @@ const Hero = () => {
       {showMusicModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-2xl">
           <div
-            className="relative bg-white/10 backdrop-blur-3xl border border-white/20 
-        p-10 rounded-3xl shadow-[0_0_60px_rgba(255,255,255,0.4)] 
+            className="mx-4 relative bg-white/10 backdrop-blur-3xl border border-white/20 
+        p-10 rounded-3xl shadow-[0_0_60px_rgba(255,255,255,0.4)]
         max-w-md w-full text-center animate-in fade-in zoom-in duration-700"
           >
             {/* Floating dreamy aura */}
@@ -261,15 +287,15 @@ const Hero = () => {
             </div>
 
             {/* Music description */}
-            <p className="mb-6 text-xl text-white/90 font-light drop-shadow-sm leading-relaxed">
-              ✨ Background music will be playing <br />
-              for a more immersive, dreamy experience 🎶
+            <p className="mb-6 text-md text-white/70 font-light drop-shadow-sm">
+              Background music will be playing <br />
+              for a more immersive, dreamy experience
             </p>
 
             {/* Best Experience Note */}
             <p className="mb-8 text-sm text-white/70 italic animate-pulse">
-              💻 Best enjoyed in{" "}
-              <span className="font-semibold text-cyan-300">Desktop mode</span>
+              For better experiences in mobile turn on
+              <span className="font-semibold text-cyan-300"> Desktop mode</span>
             </p>
 
             {/* Okay Button */}

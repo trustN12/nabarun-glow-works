@@ -285,7 +285,7 @@ const Contact = () => {
                 return (
                   <Card
                     key={index}
-                    className="glass-card p-6 hover:border-primary/60 transition-all duration-500 hover:shadow-glow-dreamy group cursor-pointer hover:scale-105"
+                    className="glass-card p-4 hover:border-primary/60 transition-all duration-500 hover:shadow-glow-dreamy group cursor-pointer hover:scale-105"
                   >
                     <a href={info.link} className="flex items-center space-x-4">
                       <div className="p-3 rounded-lg bg-gradient-primary">
