@@ -187,8 +187,8 @@ const Hero = () => {
           className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
         >
           Fullstack Software Engineer specializing in modern web technologies,
-          <span className="text-primary"> SAP ABAP</span> and
-          <span className="text-secondary"> SAP HANA</span> development
+          <span className="text-primary"> .NET Development,</span> <span className="text-cyan-400"> Agentic AI</span> and
+          <span className="text-secondary"> Generative AI</span> solutions
         </p>
 
         <div
@@ -244,7 +244,7 @@ const Hero = () => {
             </Button>
           </a>
           <a
-            href="mailto:academyshreyn12@gmail.com"
+            href="mailto:evergreenmind01@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >

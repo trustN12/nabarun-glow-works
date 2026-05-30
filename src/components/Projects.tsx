@@ -4,9 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Eye } from "lucide-react";
-
-
+import { ExternalLink, Github, Eye, PlayCircle } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +20,7 @@ const Projects = () => {
   voice-enabled doctor avatar. Integrated real-time speech recognition, natural language processing, and
   AI-generated medical reports. Implemented subscription plans with credit-based usage tracking and
   secure online payments.`,
-      image: './project1.webp',
+      image: "./project1.webp",
       technologies: [
         "NextJS",
         "Typescript",
@@ -46,10 +44,35 @@ const Projects = () => {
     },
     {
       id: 2,
+      title: "PharmaNest",
+      description:
+        "Developed a scalable full-stack healthcare e-commerce platform using React.js, Tailwind CSS, ASP.NET Core Web API, ADO.NET, MSSQL, REST APIs, and Docker.",
+      image: "./pharmanest.png",
+      technologies: [
+        "React.js",
+        "Tailwind CSS",
+        "Axios",
+        "Framer Motion",
+        "Razorpay",
+        "ASP.NET Core Web API",
+        "ADO.NET",
+        "MSSQL",
+        "Docker",
+      ],
+      liveUrl: "https://pharma-nest-frontend.vercel.app/",
+      // githubUrl: "YOUR_GITHUB_LINK",
+      frontendGithub: "https://github.com/trustN12/pharmaNestFrontend",
+
+      backendGithub: "https://github.com/trustN12/pharmaNestBackend",
+      videoUrl: "./PharmaNest.mp4",
+      featured: true,
+    },
+    {
+      id: 3,
       title: "Frontend Guru",
       description:
         "A modern frontend learning platform with interactive video tutorials, AI assistant, and payment integration",
-      image: './project2.webp',
+      image: "./project2.webp",
       technologies: [
         "React",
         "Vite",
@@ -71,11 +94,11 @@ const Projects = () => {
       featured: true,
     },
     {
-      id: 3,
+      id: 4,
       title: "MyCertifolio",
       description:
         "A personal digital portfolio to showcase certificates, academic thesis, and achievements with a clean, animated UI",
-      image: './project3.webp',
+      image: "./project3.webp",
       technologies: [
         "React",
         "Vite",
@@ -99,10 +122,10 @@ const Projects = () => {
       featured: false,
     },
     {
-      id: 4,
+      id: 5,
       title: "CodeQuest App",
       description: "A web-app with a coding quiz and live javascript editor.",
-      image: './project4.webp',
+      image: "./project4.webp",
       technologies: [
         "React",
         "Tailwind CSS",
@@ -115,11 +138,11 @@ const Projects = () => {
       featured: false,
     },
     {
-      id: 5,
+      id: 6,
       title: "YouTube Backend API",
       description:
         "A full-featured backend API for YouTube-like functionality, built with MERN stack. Supports authentication, video uploads, secure storage, JWT-based sessions, and cloud integration.",
-      image: './project5.webp', // you can replace this with a backend-themed placeholder
+      image: "./project5.webp", // you can replace this with a backend-themed placeholder
       technologies: [
         "Node.js",
         "Express.js",
@@ -130,13 +153,12 @@ const Projects = () => {
         "Express-FileUpload",
         "Dotenv",
         "JWT",
-        "Postman"
+        "Postman",
       ],
       githubUrl: "https://github.com/trustN12/yt-backend-api.git",
       featured: true,
       isBackend: true, // ✅ added flag
-    }
-    
+    },
   ];
 
   useEffect(() => {
@@ -158,7 +180,7 @@ const Projects = () => {
             end: "bottom 20%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
 
       // Title animation
@@ -175,7 +197,7 @@ const Projects = () => {
             start: "top 80%",
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }, sectionRef);
 
@@ -288,15 +310,69 @@ const Projects = () => {
                       Live Demo
                     </Button>
                   )}
+
+                  {/* Video Demo */}
+                  {project.videoUrl && (
+                    <Button
+                      onClick={() => window.open(project.videoUrl, "_blank")}
+                      variant="outline"
+                      size="sm"
+                      className="glass-card border-red-500/50 text-red-400 hover:bg-red-500/20 flex-1 glow-button hover:text-white"
+                    >
+                      <PlayCircle className="h-4 w-4 mr-2" />
+                      Video
+                    </Button>
+                  )}
+
                   {/* Code */}
-                  <Button
+                  {/* <Button
                     onClick={() => window.open(project.githubUrl, "_blank")}
                     variant="outline"
                     size="sm"
                     className="glass-card border-primary/50 text-primary hover:bg-primary/20 flex-1 glow-button hover:text-white"
                   >
                     Code
-                  </Button>
+                  </Button> */}
+
+                  {/* Frontend Code */}
+                  {project.frontendGithub && (
+                    <Button
+                      onClick={() =>
+                        window.open(project.frontendGithub, "_blank")
+                      }
+                      variant="outline"
+                      size="sm"
+                      className="glass-card border-primary/50 text-primary hover:bg-primary/20 flex-1 glow-button hover:text-white"
+                    >
+                      Frontend
+                    </Button>
+                  )}
+
+                  {/* Backend Code */}
+                  {project.backendGithub && (
+                    <Button
+                      onClick={() =>
+                        window.open(project.backendGithub, "_blank")
+                      }
+                      variant="outline"
+                      size="sm"
+                      className="glass-card border-secondary/50 text-secondary hover:bg-secondary/20 flex-1 glow-button hover:text-white"
+                    >
+                      Backend
+                    </Button>
+                  )}
+
+                  {/* Single Repo Fallback */}
+                  {project.githubUrl && (
+                    <Button
+                      onClick={() => window.open(project.githubUrl, "_blank")}
+                      variant="outline"
+                      size="sm"
+                      className="glass-card border-primary/50 text-primary hover:bg-primary/20 flex-1 glow-button hover:text-white"
+                    >
+                      Code
+                    </Button>
+                  )}
                 </div>
               </div>
             </Card>

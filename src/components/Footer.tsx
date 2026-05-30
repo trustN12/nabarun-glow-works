@@ -7,7 +7,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/trustN12', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/nabarun-biswas-102bb118a', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:academyshreyn12@gmail.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:evergreenmind01@gmail.com.com', label: 'Email' }
   ];
 
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold neon-text">Nabarun Biswas</h3>
             <p className="text-muted-foreground">
-              Fullstack Software Engineer specializing in modern web technologies and SAP solutions.
+              Whether you have a project in mind, need full-stack development, .NET, AI solutions, or just want to chat about technology, feel free to reach out!
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
@@ -48,9 +48,9 @@ const Footer = () => {
             <div className="space-y-2 text-muted-foreground">
               <p>React & Next.js</p>
               <p>TypeScript & JavaScript</p>
-              <p>SAP ABAP & HANA</p>
+              <p>ASP.Dot Net & ADO.Net</p>
               <p>Node.js & Express.js</p>
-              <p>PostgreSQL, SQL & NoSQL</p>
+              <p> MSSQL, MongoDB & Convex</p>
             </div>
           </div>
         </div>

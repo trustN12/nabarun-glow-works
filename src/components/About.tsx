@@ -12,12 +12,11 @@ const About = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
 
   const skills = [
-    { category: 'Frontend', icon: Globe, items: ['React', 'TypeScript', 'Next.js','Shadcn UI', 'Redux', 'Gsap', 'Framer', 'Tailwind CSS'] },
-    { category: 'Backend', icon: Server, items: ['Node.js', 'Express.js', 'Authentications', 'REST APIs', 'JWT', 'Firebase'] },
-    { category: 'Database', icon: Database, items: ['PostgreSQL', 'MongoDB', 'Convex', 'SAP HANA',  'SQL'] },
-    { category: 'SAP Technologies', icon: Zap, items: ['SAP ABAP', 'SAP HANA', 'SAP Fiori'] },
-    { category: 'DevOps & Tools', icon: Code, items: ['Firebase', 'Netlify', 'Clerk', 'Razorpay', 'AWS', 'Git', 'Drizzle'] },
-    { category: 'AI/ML', icon: Brain, items: ['Open-Router APIs', 'VAPI AI', 'SAP Analytics Cloud', '11Labs', 'GenAI(IBM Certifications - Ongoing)'] }
+    { category: 'Frontend', icon: Globe, items: ['React', 'TypeScript', 'Next.js','Shadcn UI', 'Gsap', 'Framer', 'Tailwind CSS', 'Axios'] },
+    { category: 'Backend', icon: Server, items: ['ASP.NET Core Web API', 'ADO.NET', 'ASP.NET MVC', 'Node.js', 'Express.js', 'Authentications', 'REST APIs'] },
+    { category: 'Database', icon: Database, items: ['MSSQL', 'MongoDB', 'Convex'] },
+    { category: 'DevOps & Tools', icon: Code, items: ['Basic Firebase', 'Netlify', 'Clerk', 'Razorpay', 'Git', 'Drizzle-ORM', 'Renders', 'Docker (Basics)', 'Postman'] },
+    { category: 'AI/ML', icon: Brain, items: ['Open-Router APIs', 'VAPI AI', '11Labs AI Agents', 'ChatGPT Prompts', 'Gemini AI API'] }
   ];
 
   useEffect(() => {
@@ -69,10 +68,8 @@ const About = () => {
         
         <div className="max-w-4xl mx-auto mb-16">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center">
-            Passionate fullstack software engineer with expertise in modern web technologies and enterprise SAP solutions. 
-            I specialize in creating scalable applications using cutting-edge frameworks while leveraging powerful SAP 
-            technologies like <span className="text-primary">ABAP</span> and <span className="text-secondary">HANA</span> 
-            for robust enterprise solutions.
+            Passionate Full Stack Software Engineer building scalable, high-performance web applications with modern technologies like <span className='text-emerald-500'>MERN</span>, <span className='text-primary'>.NET</span>, <span className='text-cyan-400'>Agentic AI</span>, and <span className='text-secondary'>Generative AI</span>. Focused on clean architecture, responsive UI, secure backend systems, and industry-grade innovation.
+
           </p>
         </div>
 

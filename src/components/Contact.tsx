@@ -136,8 +136,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "academyshreyn12@gmail.com",
-      link: "mailto:academyshreyn12@gmail.com",
+      content: "evergreenmind01@gmail.com",
+      link: "mailto:evergreenmind01@gmail.com",
     },
     {
       icon: Phone,
@@ -272,10 +272,7 @@ const Contact = () => {
                 Let's Connect
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                I'm always excited to work on new projects and collaborate with
-                fellow developers. Whether you have a project in mind, need SAP
-                expertise, or just want to chat about technology, feel free to
-                reach out!
+               I'm always excited to work on innovative projects and collaborate with passionate developers. Whether you need full-stack development, .NET solutions, AI & Agentic AI applications, modern web experiences, or simply want to discuss technology and ideas, feel free to reach out!
               </p>
             </div>
 
