@@ -1,10 +1,16 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Eye, PlayCircle } from "lucide-react";
+
+import {
+  Github,
+  Eye,
+  PlayCircle,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,10 +23,13 @@ const Projects = () => {
       id: 1,
       title: "Mediecho AI",
       description: `Built a cutting-edge AI medical consultation platform enabling patients to interact with a lifelike,
-  voice-enabled doctor avatar. Integrated real-time speech recognition, natural language processing, and
-  AI-generated medical reports. Implemented subscription plans with credit-based usage tracking and
-  secure online payments.`,
-      image: "./project1.webp",
+voice-enabled doctor avatar. Integrated real-time speech recognition, natural language processing, and
+AI-generated medical reports. Implemented subscription plans with credit-based usage tracking and
+secure online payments.`,
+
+      // ✅ FIXED PATH
+      image: "/project1.webp",
+
       technologies: [
         "NextJS",
         "Typescript",
@@ -38,16 +47,23 @@ const Projects = () => {
         "ChatGPT",
         "Assembly AI",
       ],
+
       liveUrl: "https://www.mediecho.in/",
       githubUrl: "https://github.com/trustN12/mediecho.git",
+
       featured: true,
     },
+
     {
       id: 2,
       title: "PharmaNest",
+
       description:
         "Developed a scalable full-stack healthcare e-commerce platform using React.js, Tailwind CSS, ASP.NET Core Web API, ADO.NET, MSSQL, REST APIs, and Docker.",
-      image: "./pharmanest.png",
+
+      // ✅ FIXED PATH
+      image: "/pharmanest.png",
+
       technologies: [
         "React.js",
         "Tailwind CSS",
@@ -59,20 +75,30 @@ const Projects = () => {
         "MSSQL",
         "Docker",
       ],
-      liveUrl: "https://pharma-nest-frontend.vercel.app/",
-      // githubUrl: "YOUR_GITHUB_LINK",
-      frontendGithub: "https://github.com/trustN12/pharmaNestFrontend",
 
-      backendGithub: "https://github.com/trustN12/pharmaNestBackend",
-      videoUrl: "./PharmaNest.mp4",
+      liveUrl: "https://pharma-nest-frontend.vercel.app/",
+
+      frontendGithub:
+        "https://github.com/trustN12/pharmaNestFrontend",
+
+      backendGithub:
+        "https://github.com/trustN12/pharmaNestBackend",
+
+      // ✅ FIXED PATH
+      videoUrl: "/PharmaNest.mp4",
+
       featured: true,
     },
+
     {
       id: 3,
       title: "Frontend Guru",
+
       description:
         "A modern frontend learning platform with interactive video tutorials, AI assistant, and payment integration",
-      image: "./project2.webp",
+
+      image: "/project2.webp",
+
       technologies: [
         "React",
         "Vite",
@@ -89,16 +115,22 @@ const Projects = () => {
         "ChatGPT",
         "11Labs AI",
       ],
+
       liveUrl: "https://frontend-guru.netlify.app/",
       githubUrl: "https://github.com/trustN12/frontend-guru",
+
       featured: true,
     },
+
     {
       id: 4,
       title: "MyCertifolio",
+
       description:
         "A personal digital portfolio to showcase certificates, academic thesis, and achievements with a clean, animated UI",
-      image: "./project3.webp",
+
+      image: "/project3.webp",
+
       technologies: [
         "React",
         "Vite",
@@ -117,15 +149,25 @@ const Projects = () => {
         "Radix UI",
         "Sonner",
       ],
-      liveUrl: "https://stirring-meringue-b80f45.netlify.app/",
-      githubUrl: "https://github.com/trustN12/MYcertifolio",
+
+      liveUrl:
+        "https://stirring-meringue-b80f45.netlify.app/",
+
+      githubUrl:
+        "https://github.com/trustN12/MYcertifolio",
+
       featured: false,
     },
+
     {
       id: 5,
       title: "CodeQuest App",
-      description: "A web-app with a coding quiz and live javascript editor.",
-      image: "./project4.webp",
+
+      description:
+        "A web-app with a coding quiz and live javascript editor.",
+
+      image: "/project4.webp",
+
       technologies: [
         "React",
         "Tailwind CSS",
@@ -133,16 +175,24 @@ const Projects = () => {
         "React-Router",
         "Framer-motion",
       ],
+
       liveUrl: "https://code-quest-mu.vercel.app/",
-      githubUrl: "https://github.com/trustN12/CodeQuest.git",
+
+      githubUrl:
+        "https://github.com/trustN12/CodeQuest.git",
+
       featured: false,
     },
+
     {
       id: 6,
       title: "YouTube Backend API",
+
       description:
         "A full-featured backend API for YouTube-like functionality, built with MERN stack. Supports authentication, video uploads, secure storage, JWT-based sessions, and cloud integration.",
-      image: "./project5.webp", // you can replace this with a backend-themed placeholder
+
+      image: "/project5.webp",
+
       technologies: [
         "Node.js",
         "Express.js",
@@ -155,18 +205,29 @@ const Projects = () => {
         "JWT",
         "Postman",
       ],
-      githubUrl: "https://github.com/trustN12/yt-backend-api.git",
+
+      githubUrl:
+        "https://github.com/trustN12/yt-backend-api.git",
+
       featured: true,
-      isBackend: true, // ✅ added flag
+
+      isBackend: true,
     },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate project cards
+      // ================= CARD ANIMATION =================
+
       gsap.fromTo(
         projectsRef.current?.children,
-        { y: 100, opacity: 0, rotationY: 45 },
+
+        {
+          y: 100,
+          opacity: 0,
+          rotationY: 45,
+        },
+
         {
           y: 0,
           opacity: 1,
@@ -174,6 +235,7 @@ const Projects = () => {
           duration: 1,
           stagger: 0.3,
           ease: "power3.out",
+
           scrollTrigger: {
             trigger: projectsRef.current,
             start: "top 80%",
@@ -183,15 +245,23 @@ const Projects = () => {
         },
       );
 
-      // Title animation
+      // ================= TITLE ANIMATION =================
+
       gsap.fromTo(
         ".projects-title",
-        { y: 50, opacity: 0, scale: 0.9 },
+
+        {
+          y: 50,
+          opacity: 0,
+          scale: 0.9,
+        },
+
         {
           y: 0,
           opacity: 1,
           scale: 1,
           duration: 1,
+
           scrollTrigger: {
             trigger: ".projects-title",
             start: "top 80%",
@@ -205,87 +275,97 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 px-4">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="py-20 px-4"
+    >
       <div className="container mx-auto">
+        {/* ================= TITLE ================= */}
+
         <h2 className="projects-title text-4xl md:text-6xl font-bold text-center mb-16 neon-text">
           Featured Projects
         </h2>
+
+        {/* ================= PROJECT GRID ================= */}
 
         <div
           ref={projectsRef}
           className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <Card
               key={project.id}
               className={`group overflow-hidden glass-card hover:border-primary/60 transition-all duration-500 hover:scale-105 hover:shadow-glow-dreamy shimmer ${
-                project.featured ? "lg:col-span-2 xl:col-span-1" : ""
+                project.featured
+                  ? "lg:col-span-2 xl:col-span-1"
+                  : ""
               }`}
             >
+              {/* ================= IMAGE ================= */}
+
               <div className="relative overflow-hidden rounded-t-2xl">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+
+                {/* OVERLAY */}
                 <div className="absolute inset-0 bg-gradient-aurora opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* TOP RIGHT ICON BUTTONS */}
                 <div className="absolute bottom-6 right-6 flex space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  {/* Live Preview (Eye) */}
-                  {!project.isBackend && project.liveUrl && (
+
+                  {/* LIVE PREVIEW */}
+                  {!project.isBackend &&
+                    project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          size="sm"
+                          className="glow-button bg-gradient-primary text-primary-foreground shadow-glow-primary"
+                        >
+                          <Eye className="h-4 w-4" />
+                        </Button>
+                      </a>
+                    )}
+
+                  {/* GITHUB */}
+                  {project.githubUrl && (
                     <a
-                      href={project.liveUrl}
+                      href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Button
                         size="sm"
-                        className="glow-button bg-gradient-primary text-primary-foreground shadow-glow-primary"
+                        className="glass-card border-secondary/50 text-secondary hover:bg-secondary/20 glow-button"
                       >
-                        <Eye className="h-4 w-4" />
+                        <Github className="h-4 w-4" />
                       </Button>
                     </a>
                   )}
-
-                  {/* GitHub Code */}
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      size="sm"
-                      className="glass-card border-secondary/50 text-secondary hover:bg-secondary/20 glow-button"
-                    >
-                      <Github className="h-4 w-4" />
-                    </Button>
-                  </a>
-
-                  {/* External Link */}
-                  {/* {!project.isBackend && project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        size="sm"
-                        className="glass-card border-accent/50 text-accent hover:bg-accent/20 glow-button"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                      </Button>
-                    </a>
-                  )} */}
                 </div>
               </div>
 
+              {/* ================= CONTENT ================= */}
+
               <div className="p-6">
+                {/* TITLE */}
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
+
+                {/* DESCRIPTION */}
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
 
+                {/* TECH STACK */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <Badge
@@ -298,80 +378,100 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex space-x-3">
-                  {/* Live Demo */}
-                  {!project.isBackend && project.liveUrl && (
-                    <Button
-                      onClick={() => window.open(project.liveUrl, "_blank")}
-                      variant="default"
-                      size="sm"
-                      className="glow-button bg-gradient-primary hover:bg-gradient-primary text-primary-foreground flex-1 shadow-glow-primary"
-                    >
-                      Live Demo
-                    </Button>
-                  )}
+                {/* ================= BUTTONS ================= */}
 
-                  {/* Video Demo */}
+                <div className="flex flex-wrap gap-3">
+
+                  {/* LIVE DEMO */}
+                  {!project.isBackend &&
+                    project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1"
+                      >
+                        <Button
+                          variant="default"
+                          size="sm"
+                          className="w-full glow-button bg-gradient-primary hover:bg-gradient-primary text-primary-foreground shadow-glow-primary"
+                        >
+                          Live Demo
+                        </Button>
+                      </a>
+                    )}
+
+                  {/* VIDEO DEMO */}
                   {project.videoUrl && (
-                    <Button
-                      onClick={() => window.open(project.videoUrl, "_blank")}
-                      variant="outline"
-                      size="sm"
-                      className="glass-card border-red-500/50 text-red-400 hover:bg-red-500/20 flex-1 glow-button hover:text-white"
+                    <a
+                      href={project.videoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
                     >
-                      <PlayCircle className="h-4 w-4 mr-2" />
-                      Video
-                    </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full glass-card border-red-500/50 text-red-400 hover:bg-red-500/20 glow-button hover:text-white"
+                      >
+                        <PlayCircle className="h-4 w-4 mr-2" />
+                        Video
+                      </Button>
+                    </a>
                   )}
 
-                  {/* Code */}
-                  {/* <Button
-                    onClick={() => window.open(project.githubUrl, "_blank")}
-                    variant="outline"
-                    size="sm"
-                    className="glass-card border-primary/50 text-primary hover:bg-primary/20 flex-1 glow-button hover:text-white"
-                  >
-                    Code
-                  </Button> */}
-
-                  {/* Frontend Code */}
+                  {/* FRONTEND */}
                   {project.frontendGithub && (
-                    <Button
-                      onClick={() =>
-                        window.open(project.frontendGithub, "_blank")
-                      }
-                      variant="outline"
-                      size="sm"
-                      className="glass-card border-primary/50 text-primary hover:bg-primary/20 flex-1 glow-button hover:text-white"
+                    <a
+                      href={project.frontendGithub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
                     >
-                      Frontend
-                    </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full glass-card border-primary/50 text-primary hover:bg-primary/20 glow-button hover:text-white"
+                      >
+                        Frontend
+                      </Button>
+                    </a>
                   )}
 
-                  {/* Backend Code */}
+                  {/* BACKEND */}
                   {project.backendGithub && (
-                    <Button
-                      onClick={() =>
-                        window.open(project.backendGithub, "_blank")
-                      }
-                      variant="outline"
-                      size="sm"
-                      className="glass-card border-secondary/50 text-secondary hover:bg-secondary/20 flex-1 glow-button hover:text-white"
+                    <a
+                      href={project.backendGithub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
                     >
-                      Backend
-                    </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full glass-card border-secondary/50 text-secondary hover:bg-secondary/20 glow-button hover:text-white"
+                      >
+                        Backend
+                      </Button>
+                    </a>
                   )}
 
-                  {/* Single Repo Fallback */}
+                  {/* SINGLE REPO FALLBACK */}
                   {project.githubUrl && (
-                    <Button
-                      onClick={() => window.open(project.githubUrl, "_blank")}
-                      variant="outline"
-                      size="sm"
-                      className="glass-card border-primary/50 text-primary hover:bg-primary/20 flex-1 glow-button hover:text-white"
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
                     >
-                      Code
-                    </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full glass-card border-primary/50 text-primary hover:bg-primary/20 glow-button hover:text-white"
+                      >
+                        Code
+                      </Button>
+                    </a>
                   )}
                 </div>
               </div>
